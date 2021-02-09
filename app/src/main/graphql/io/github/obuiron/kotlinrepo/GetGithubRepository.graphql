@@ -1,0 +1,25 @@
+query GetGithubRepository($id: ID!) {
+    node(id: $id) {
+        ... on Repository {
+            id
+            nameWithOwner
+            description
+            openGraphImageUrl
+            viewerHasStarred
+            stargazerCount
+            forkCount
+            watchers {
+                totalCount
+            }
+            releases {
+                totalCount
+            }
+            issues {
+                totalCount
+            }
+            pullRequests {
+                totalCount
+            }
+        }
+    }
+}
