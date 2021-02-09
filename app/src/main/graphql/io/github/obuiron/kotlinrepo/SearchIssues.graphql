@@ -1,0 +1,8 @@
+# issue and pull request use the ISSUE type and only query filter them
+# issue query: "repo:android/architecture-samples is:issue created:2021-01-01..2021-02-01"
+# pull request query: "repo:android/architecture-samples is:pr created:2021-01-01..2021-02-01"
+query RepositoryIssueCount($query: String!) {
+    search(first: 1, query: $query, type:ISSUE) {
+        issueCount
+    }
+}

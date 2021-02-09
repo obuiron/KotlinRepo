@@ -1,0 +1,38 @@
+query KotlinGithubRepositoriesNext($first: Int, $after: String) {
+    search(query: "language:kotlin stars:>=1000 sort:stars-desc", type: REPOSITORY, first: $first, after: $after) {
+        ...RepositoriesResult
+    }
+}
+
+query KotlinGithubRepositoriesPrevious($last: Int, $before: String) {
+    search(query: "language:kotlin stars:>=1000 sort:stars-desc", type: REPOSITORY, last: $last, before: $before) {
+        ...RepositoriesResult
+    }
+}
+
+fragment RepositoriesResult on SearchResultItemConnection {
+    repositoryCount
+    pageInfo {
+        endCursor
+        startCursor
+        hasPreviousPage
+        hasNextPage
+    }
+    edges {
+        cursor
+        node {
+            ... on Repository {
+                id
+                nameWithOwner
+                description
+                viewerHasStarred
+                stargazerCount
+                forkCount
+                watchers {
+                    totalCount
+                }
+                openGraphImageUrl
+            }
+        }
+    }
+}

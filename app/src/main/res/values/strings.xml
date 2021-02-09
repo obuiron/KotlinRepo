@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">KotlinRepo</string>
+
+    <string name="auth_log_in_with_github">Log in with GitHub</string>
+
+    <string name="repository_select_a_repository">Select a repository in list</string>
+
+    <string name="stars">Stars</string>
+    <string name="forks">Forks</string>
+    <string name="watchers">Watchers</string>
+    <string name="issues">Issues</string>
+    <string name="releases">Releases</string>
+    <string name="pull_requests">Pull requests</string>
+</resources>
